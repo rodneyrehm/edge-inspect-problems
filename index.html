@@ -19,7 +19,22 @@
     <h2>"strict mode" and XHR don't play along well</h2>
     <p>The minimal test <a href="strict-with-hbs.html">strict-with-hbs</a> says this is running fine</p>
     
+    <h2>jQuery.ajax() and the console stays blank</h2>
+    <p>The minimal test <a href="jquery-ajax-no-console.html">jquery-ajax-no-console</a> runs fine except for the console staying empty. (when reload on tablet only!)</p>
+    <p>Note that if the EI client is following Chrome on the desktop, we get the following output in EI console:</p>
+    <pre>Script Error. 0
+
+Uncaught Error: Load timeout for modules: hbs!template_unnormalized2,hbs!template
+http://requirejs.org/docs/errors.html#timeout http://172.16.110.143:8080/edge-inspect-problems/libs/require.js 1754</pre>
     
+    <h2>jQuery.ajax() and alert() and the console is back</h2>
+    <p>The minimal test <a href="jquery-ajax-alert-console.html">jquery-ajax-alert-console</a> runs fine except and we get <em>some</em> console output. In fact only the Ajax response, any other messages were disregarded. (when reload on tablet only!)</p>
+    <p>Note that if the EI client is following Chrome on the desktop, we get the following output in EI console:</p>
+    <pre>Script Error. 0
+
+Uncaught Error: Load timeout for modules: hbs!template_unnormalized2,hbs!template
+http://requirejs.org/docs/errors.html#timeout http://172.16.110.143:8080/edge-inspect-problems/libs/require.js 1754</pre>
+
     
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+  		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Handlebars template via RequireJS with strict mode - Testing Edge Inspect</title>
+
+        <script>
+            console.log("initializing page");
+            window.onerror = function(error, file, line) {
+                window.console && console.log(error, file, line);
+            };
+        </script>
+
+        <link href="foo.css" rel="stylesheet">
+        <script src="libs/modernizr.js"></script>
+    </head>
+
+    <body>
+        <!--
+            If everything goes according to plan:
+            * page is green and says "Success" 
+            * console shows the following messages
+                initializing page
+                initializing require.js
+                running
+                done
+            
+            Page is green, but console stays blank
+        -->
+        <script data-main="js/main.jquery-ajax-no-console" src="libs/require.js" async defer></script>
+    </body>
+</html>

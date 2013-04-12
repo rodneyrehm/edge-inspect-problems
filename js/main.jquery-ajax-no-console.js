@@ -16,9 +16,18 @@
     });
 
     require([
+        'jquery',
         './dependency'
-    ], function(dependency) {
+    ], function(jQuery, dependency) {
         console.log("running");
+
+        jQuery.ajax({ 
+            url: location.href.replace(/\/[^\/]+$/, "/foo.css"),
+            method: "GET", 
+            dataType: 'text' 
+        })
+        .always(function(a, b, c){ console.log("AJAX:", a, b, c) });
+
         dependency();
         console.log("done");
     });
